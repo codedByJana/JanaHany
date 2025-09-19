@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jana Hany — Cybersecurity & Automation Portfolio</title>
+
+  <!-- Google font (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa6b2;
+      --accent:#6ee7b7;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --container:1100px;
+      --shadow: 0 8px 30px rgba(2,6,23,0.6);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#061021 0%, #071226 45%, #081528 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px 18px;
+      display:flex;
+      justify-content:center;
+      font-size:16px;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--container);
+    }
+
+    /* Header / Nav */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:28px;
+    }
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#60a5fa);
+      display:grid;
+      place-items:center;
+      color:#021026;
+      font-weight:700;
+      box-shadow:var(--shadow);
+      flex-shrink:0;
+    }
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:18px;
+      font-weight:600;
+    }
+    nav a:hover{color:var(--accent)}
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:center;
+      margin-bottom:28px;
+    }
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:28px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    h1{margin:0 0 10px 0; font-size:28px; letter-spacing:-0.4px}
+    .sub{color:var(--muted); margin-bottom:18px}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{
+      background:linear-gradient(90deg,var(--accent),#60a5fa);
+      color:#021026;
+      border:none;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:700;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .btn.secondary{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.04);
+      font-weight:600;
+    }
+    /* Quick info */
+    .info-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:18px}
+    .chip{
+      background:var(--glass);
+      padding:10px;
+      border-radius:10px;
+      color:var(--muted);
+      font-weight:600;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    /* Right column */
+    .profile{
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+      padding:20px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+    }
+    .profile h3{margin:0 0 6px 0}
+    .profile p{margin:0;color:var(--muted)}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:10px;font-weight:600;color:var(--muted);font-size:14px}
+
+    /* Projects */
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+      margin-top:20px;
+    }
+    .project{
+      background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      padding:18px;
+      border-radius:12px;
+      box-shadow: 0 6px 22px rgba(2,6,23,0.5);
+      min-height:160px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .project h4{margin:0 0 6px 0}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+    .project .foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    .tag{font-size:13px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted)}
+
+    /* Contact / Footer */
+    footer{
+      margin-top:28px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .contact-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:16px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      display:flex;
+      gap:14px;
+      align-items:center;
+      min-width:260px;
+    }
+    .muted-small{color:var(--muted); font-size:14px}
+
+    /* responsive */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      header{flex-direction:column; align-items:flex-start; gap:12px}
+      nav a{margin-left:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">JH</div>
+        <div>
+          <div style="font-weight:700">Jana Hany</div>
+          <div style="font-size:13px;color:var(--muted)">Information Technology student · Automation & SOC tooling</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="secondary" href="#about" style="margin-left:8px; color:var(--muted); text-decoration:none;">About</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="about" aria-labelledby="about-heading">
+      <div class="hero-card">
+        <h1 id="about-heading">Hello — I'm <span style="color:var(--accent)">Jana Hany</span></h1>
+        <div class="sub">I build Python automation tools for SOC analysts and develop practical security solutions that save time and resources.</div>
+
+        <div class="cta-row">
+          <a class="btn" href="#" id="download-resume">Download Résumé</a>
+          <a class="btn secondary" href="#projects">View Projects</a>
+          <a class="btn secondary" href="YOUR_GITHUB_URL" target="_blank" rel="noopener">View GitHub</a>
+        </div>
+
+        <div class="info-grid" aria-hidden="false">
+          <div class="chip"><div>Role</div><div style="color:var(--accent)">SOC Analyst intern</div></div>
+          <div class="chip"><div>Location</div><div style="color:var(--accent)">Remote / Student</div></div>
+
+          <div class="chip"><div>Stack</div><div>Python · Regex · Argparse</div></div>
+          <div class="chip"><div>Focus</div><div>Log parsing · Automation · Crypto</div></div>
+        </div>
+      </div>
+
+      <aside class="profile" aria-labelledby="profile-heading">
+        <h3 id="profile-heading">Quick profile</h3>
+        <p class="muted-small">Information Technology student passionate about building automation tools and contributing to open-source projects. Currently interning as a SOC Analyst and developing Python tools to automate repetitive security tasks.</p>
+
+        <div style="margin-top:12px">
+          <strong style="font-weight:700">Notable projects</strong>
+          <div class="skills" aria-hidden="true">
+            <span class="skill">Log Parsing Tool</span>
+            <span class="skill">Password Cipher</span>
+            <span class="skill">Regex Patterns Tool</span>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <strong style="font-weight:700">Contact</strong>
+          <div class="muted-small" style="margin-top:6px">Email: <a href="mailto:Janahanysalah@gmail.com" style="color:var(--accent);text-decoration:none">Janahanysalah@gmail.com</a></div>
+          <div style="margin-top:6px"><a href="https://github.com/codedByJana/LogFileParsingTool" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none">GitHub / LogFileParsingTool</a></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading" style="margin-bottom:12px">Projects</h2>
+
+      <div class="projects">
+        <!-- Project: Log Parsing Tool -->
+        <article class="project" aria-labelledby="p1">
+          <div>
+            <h4 id="p1">Log Parsing tool</h4>
+            <p>Developed a Python log parsing tool using <strong>re</strong>, <strong>pandas</strong>, and <strong>argparse</strong> to extract, filter and analyze system, firewall and application logs with support for multiple formats.</p>
+          </div>
+          <div class="foot">
+            <span class="tag">Python · pandas · re</span>
+            <div style="display:flex;gap:8px">
+              <a class="btn secondary" href="https://github.com/codedByJana/LogFileParsingTool" target="_blank" rel="noopener">View repo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project: Password Cipher -->
+        <article class="project" aria-labelledby="p2">
+          <div>
+            <h4 id="p2">Password Cipher tool</h4>
+            <p>Built a password cipher using <strong>argon2-cffi</strong> for secure hashing and Fernet (cryptography) for optional reversible encryption. CLI with argparse, proper salt handling, and JSON/CSV output options.</p>
+          </div>
+          <div class="foot">
+            <span class="tag">Security · Cryptography</span>
+            <div style="display:flex;gap:8px">
+              <a class="btn secondary" href="#" title="link to repo or demo">View details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project: REGEX Patterns -->
+        <article class="project" aria-labelledby="p3">
+          <div>
+            <h4 id="p3">REGEX Patterns tool</h4>
+            <p>Tool to generate, test, and apply regex patterns for validating and extracting data such as IPs, emails, and log entries — focused on automation for parsing noisy logs.</p>
+          </div>
+          <div class="foot">
+            <span class="tag">Regex · Automation</span>
+            <div style="display:flex;gap:8px">
+              <a class="btn secondary" href="#" title="link to repo or demo">View details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Optional project slot -->
+        <article class="project" aria-labelledby="p4">
+          <div>
+            <h4 id="p4">Other contributions</h4>
+            <p>Open-source contributions, lab solves (HTB/THM), and automation scripts. Reach out for full list or to request examples and walkthroughs.</p>
+          </div>
+          <div class="foot">
+            <span class="tag">Open Source</span>
+            <div style="display:flex;gap:8px">
+              <a class="btn secondary" href="#" title="link to GitHub profile">Explore</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills & Certifications -->
+    <section id="skills" style="margin-top:22px" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills & Certifications</h2>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:12px">
+        <div class="contact-card" style="min-width:320px;flex-direction:column;">
+          <div style="font-weight:700;margin-bottom:6px">Technical skills</div>
+          <div class="muted-small">Python · Regex · Argon2 · Cryptography (Fernet) · pandas · Log analysis · CLI tools</div>
+        </div>
+
+        <div class="contact-card" style="min-width:260px;flex-direction:column;">
+          <div style="font-weight:700;margin-bottom:6px">Certs & Tools</div>
+          <div class="muted-small">Cisco Packet Tracer · CCNA: ITN (noted) · FortiGate Network Security</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <footer id="contact">
+      <div class="contact-card" aria-labelledby="contact-heading">
+        <div>
+          <div id="contact-heading" style="font-weight:700">Get in touch</div>
+          <div class="muted-small" style="margin-top:6px">For collaborations, consulting, or project walkthroughs — email me.</div>
+        </div>
+        <div style="margin-left:auto; text-align:right">
+          <div style="font-weight:700;color:var(--accent)">Janahanysalah@gmail.com</div>
+          <div style="font-size:13px;color:var(--muted); margin-top:6px"><a href="https://github.com/codedByJana" target="_blank" rel="noopener" style="color:var(--muted)">github.com/codedByJana</a></div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="btn" href="#" id="download-portfolio">Download portfolio (PDF)</a>
+        <div style="color:var(--muted);font-size:13px">© <span id="year"></span> Jana Hany — Built for automation & SOC tooling</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // small scripts
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hook the download buttons to example local files (replace with your files or links).
+    document.getElementById('download-resume').addEventListener('click', function(e){
+      e.preventDefault();
+      // Replace 'resume.pdf' with the path to your resume PDF (e.g. ./Lone Wolf.pdf).
+      window.open('resume.pdf', '_blank');
+    });
+    document.getElementById('download-portfolio').addEventListener('click', function(e){
+      e.preventDefault();
+      // Replace 'portfolio.pdf' with the path to your full portfolio PDF (e.g. ./Tech Website.pdf).
+      window.open('portfolio.pdf', '_blank');
+    });
+  </script>
+</body>
+</html>
