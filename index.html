@@ -26,3 +26,225 @@
     html { scroll-behavior: smooth; }
     body {
       background: var(--bg);
+      color: var(--hl);
+      font-family: var(--font-body);
+      line-height: 1.6;
+    }
+    a { color: var(--hl); text-decoration:none; }
+    a:hover { opacity: 0.8; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(4,32,38,0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 100;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding: 2rem;
+    }
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 1rem;
+    }
+    .cta {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .btn {
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      border: 1px solid var(--hl);
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: var(--hl);
+      color: var(--bg);
+    }
+
+    /* Sections */
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    section h2 {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--hl);
+      padding-left: 0.5rem;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--fg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: transform 0.2s ease;
+    }
+    .project-card:hover { transform: translateY(-4px); }
+    .project-card h3 {
+      font-family: var(--font-head);
+      margin-bottom: 0.5rem;
+    }
+    .project-card p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .tag {
+      background: #0b2d33;
+      padding: 0.3rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    .skills-list span {
+      background: var(--fg);
+      padding: 0.5rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    /* Contact */
+    footer {
+      background: var(--fg);
+      padding: 2rem 1.5rem;
+      text-align:center;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <i class="fas fa-circle"></i> <!-- 8-ball stand-in -->
+      Jana Hany
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Hello, I’m Jana 🎱</h1>
+    <p>Cybersecurity & Automation student — I build Python tools for SOC analysts and create security projects focused on networking, cryptography, and log analysis.</p>
+    <div class="cta">
+      <a href="resume.pdf" class="btn" target="_blank">Download Résumé</a>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m an Information Technology student passionate about cybersecurity and automation. I create tools that save analysts time and streamline workflows. I also contribute to open-source projects in Python.</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Log Parsing Tool</h3>
+        <p>A Python tool using regex and argparse to filter and analyze logs across multiple formats.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Regex</span></div>
+        <a href="https://github.com/codedByJana/LogFileParsingTool" target="_blank">🔗 GitHub Repo</a>
+      </div>
+      <div class="project-card">
+        <h3>Password Cipher Tool</h3>
+        <p>Implements secure hashing and Fernet encryption with CLI support and safe password storage.</p>
+        <div class="tags"><span class="tag">Cryptography</span><span class="tag">Security</span></div>
+        <a href="https://github.com/codedByJana" target="_blank">🔗 GitHub Repo</a>
+      </div>
+      <div class="project-card">
+        <h3>Regex Patterns Tool</h3>
+        <p>Generates and applies regex patterns for log parsing, validation, and automation workflows.</p>
+        <div class="tags"><span class="tag">Regex</span><span class="tag">Automation</span></div>
+        <a href="https://github.com/codedByJana" target="_blank">🔗 GitHub Repo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span>Python</span><span>Regex</span>
+      <span>Cryptography</span><span>Networking Labs</span>
+      <span>HTB/THM Labs</span><span>GitHub</span><span>Linux</span>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 <a href="mailto:Janahanysalah@gmail.com">Janahanysalah@gmail.com</a></p>
+    <p>🌐 <a href="https://github.com/codedByJana" target="_blank">github.com/codedByJana</a></p>
+    <p>💼 <a href="http://www.linkedin.com/in/janahanysalah" target="_blank">linkedin.com/in/janahanysalah</a></p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Jana Hany — Cybersecurity & Automation Portfolio
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
