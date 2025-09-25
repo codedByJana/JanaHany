@@ -1,225 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jana Hany — Cybersecurity & Automation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jana Hany — Portfolio</title>
+  
+  <!-- Favicon (8-ball) -->
+  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/svgs/solid/circle.svg" type="image/svg+xml">
 
-  <!-- Google Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&family=Silkscreen&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/2c7fc28a2f.js" crossorigin="anonymous"></script>
+
   <style>
     :root {
-      --bg: #0d1117;
-      --fg: #e6edf3;
-      --muted: #8b949e;
-      --accent: #367588; /* teal blue */
-      --card: #161b22;
-      --radius: 12px;
+      --bg: #042026;
+      --fg: #133840;
+      --hl: #93BFBF;
+      --font-head: 'Silkscreen', cursive;
+      --font-body: 'Pixelify Sans', sans-serif;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: "Inter", sans-serif;
       background: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-    }
-    a { color: var(--accent); text-decoration:none; }
-    a:hover { text-decoration: underline; }
-
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(13,17,23,0.9);
-      backdrop-filter: blur(8px);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 100;
-      border-bottom: 1px solid #21262d;
-    }
-    header .logo { font-weight:700; font-size:1.1rem; }
-    nav a {
-      margin-left: 1.5rem;
-      color: var(--muted);
-      font-weight: 600;
-    }
-    nav a:hover { color: var(--accent); }
-
-    section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      border-left: 4px solid var(--accent);
-      padding-left: 0.5rem;
-    }
-
-    /* Hero */
-    .hero {
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      height: 90vh;
-      text-align:center;
-    }
-    .hero h1 { font-size:2.6rem; margin-bottom: 1rem; }
-    .hero p { color: var(--muted); max-width:600px; }
-    .hero .cta {
-      margin-top: 2rem;
-      display: flex;
-      gap: 1rem;
-    }
-    .btn {
-      padding: 0.7rem 1.2rem;
-      border-radius: var(--radius);
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #0d1117;
-    }
-    .btn-outline {
-      border: 1px solid var(--accent);
-      color: var(--accent);
-    }
-
-    /* Projects */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: var(--card);
-      padding: 1.5rem;
-      border-radius: var(--radius);
-      transition: transform 0.2s ease;
-    }
-    .project-card:hover { transform: translateY(-4px); }
-    .project-card h3 { margin-bottom: 0.5rem; }
-    .project-card p { font-size: 0.95rem; color: var(--muted); margin-bottom: 1rem; }
-    .tags { display: flex; gap:0.5rem; flex-wrap: wrap; }
-    .tag {
-      background: #21262d;
-      color: var(--muted);
-      padding: 0.3rem 0.6rem;
-      border-radius: 8px;
-      font-size: 0.8rem;
-    }
-
-    /* Skills */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
-    .skills-list span {
-      background: var(--card);
-      padding: 0.5rem 0.9rem;
-      border-radius: var(--radius);
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* Contact */
-    footer {
-      background: #161b22;
-      padding: 2rem 1.5rem;
-      text-align:center;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 3rem;
-    }
-    footer a { color: var(--accent); }
-  </style>
-</head>
-<body>
-
-  <!-- Header -->
-  <header>
-    <div class="logo">Jana Hany</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <h1>Hi, I’m Jana 👋</h1>
-    <p>I build Python automation tools for SOC analysts and create cybersecurity projects focused on networking, cryptography, and log analysis.</p>
-    <div class="cta">
-      <a href="resume.pdf" class="btn btn-primary" target="_blank">Download Résumé</a>
-      <a href="#projects" class="btn btn-outline">View Projects</a>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m an Information Technology student passionate about cybersecurity and automation. I create tools that save analysts time and streamline repetitive security workflows. I also build open-source projects in Python.</p>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Log Parsing Tool</h3>
-        <p>A Python tool using re and argparse to filter and analyze logs across multiple formats.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Regex</span></div>
-      </div>
-      <div class="project-card">
-        <h3>Password Cipher Tool</h3>
-        <p>Implements secure hashing and Fernet encryption with CLI support and safe password storage.</p>
-        <div class="tags"><span class="tag">Cryptography</span><span class="tag">Security</span></div>
-      </div>
-      <div class="project-card">
-        <h3>Regex Patterns Tool</h3>
-        <p>Generates and applies regex patterns for log parsing, validation, and automation workflows.</p>
-        <div class="tags"><span class="tag">Regex</span><span class="tag">Automation</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Skills & Tools</h2>
-    <div class="skills-list">
-      <span>Python</span><span>Regex</span>
-      <span>Cryptography</span><span>Networking Labs</span>
-      <span>HTB/THM Labs</span>
-      <span>GitHub</span><span>Linux</span>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:Janahanysalah@gmail.com">Janahanysalah@gmail.com</a></p>
-    <p>🌐 <a href="https://github.com/codedByJana" target="_blank">github.com/codedByJana</a></p>
-    <p>💼 <a href="http://www.linkedin.com/in/janahanysalah" target="_blank">linkedin.com/in/janahanysalah</a></p>
-  </section>
-
-  <footer>
-    © <span id="year"></span> Jana Hany — Cybersecurity & Automation Portfolio
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
